@@ -95,6 +95,10 @@ So our new DataFrame has 1330 records split across 17 different columns.
 
 We can examine the contents of the resultant DataFrame using the head() command, which grabs the first five rows:
 
+![image](https://github.com/CLAREISMO/Pandas-For-Data-Science-/assets/63759427/1e80d0a5-9dc5-4795-a81f-a94c18014546)
+
+
+
 
 
 
