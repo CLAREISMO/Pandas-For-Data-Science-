@@ -12,7 +12,7 @@
 
 
 
-## **1. CLASS: Creating, Reading, and Writing**
+## **1. Creating, Reading, and Writing**
 
 ### **Introduction**
 
@@ -97,7 +97,7 @@ We can examine the contents of the resultant DataFrame using the head() comman
 
 ![image](https://github.com/CLAREISMO/Pandas-For-Data-Science-/assets/63759427/1e80d0a5-9dc5-4795-a81f-a94c18014546)
 
-## **2. CLASS: Indexing, Selecting & Assigning**
+## **2. Indexing, Selecting & Assigning**
 
 ### **Introduction**
 
@@ -351,7 +351,7 @@ When printing the DataFrame again we get an additional index_backwards column. T
 ![image](https://github.com/CLAREISMO/test/assets/63759427/5143fa61-c669-43ee-a2f3-a2948ee065fa)
 
 
-## **3. CLASS: Summary Functions and Maps**
+## **3. Summary Functions and Maps**
 
 ### **Introduction**
 
