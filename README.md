@@ -340,7 +340,7 @@ Going the other way, assigning data to a DataFrame is easy. You can assign eithe
 ![image](https://github.com/CLAREISMO/test/assets/63759427/95d24d4c-d8e0-46a0-84f9-eb78d02142cc)
 
 
-#* Iterable data Assignment 
+**Iterable data Assignment** 
 
 We generate a new column index_backwards which returns an inverted index starting with the last value of the index of the original DataFrame and ending with the first record of the index of the original DataFrame.
 
