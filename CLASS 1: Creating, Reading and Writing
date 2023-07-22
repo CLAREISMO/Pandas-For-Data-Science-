@@ -48,3 +48,13 @@ import pandas as pd
 datos = pd.read_csv('May_2022.csv', header = 0, index_col = 0)
 print(datos.head())
 print(datos.shape)
+
+
+![image](https://github.com/CLAREISMO/Pandas-For-Data-Science-/assets/63759427/da26ede4-3224-4e66-8c46-a786ce6d4bb6)<img src="https://media.tenor.com/Nk6wJhshPaMAAAAi/dm4uz3-foekoe.gif" width="60px">
+
+
+**This repository contains the Pandas by Kaggle course also implemented in the VSC code editor in order to observe all the requirements and behavior of the code in a real production environment.**
+
+**You can see the respective outputs in this file and the code in the Python language you will get for each topic in the repository files.**
+
+**Enjoy it**
