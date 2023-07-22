@@ -249,6 +249,107 @@ Let's see the following example:
 
 This operation produced a Series of True/False booleans based on the condition of each record. This result can then be used inside of loc to select the relevant data:
 
++ We can know the percentage of occurrence of a value:
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/410f6a20-30e4-4b9f-bf60-050d3965cf0c)
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/d0f22c8a-b834-4b96-a23b-fcc8d70a3c87)
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/2631d85f-076e-429f-bd13-361481375ba9)
+
+
++ We can use the ampersand (&) to join two queries: in this case, we want to return the records of the DataFrame that meet the following conditions at the same time:  TP =="538" & Weight <= 0.4
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/914d38ca-cd3a-459d-8c62-a898d693a272)
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/0193d308-2cc0-4d17-9bed-8a4300e5fa45)
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/7e721f49-9cc5-4503-8135-988352413944)
+
+
++ We can also use the conditional pipe (|) to join two queries: in this case, we want to return the records of the DataFrame that meet one of the two requested queries, they only have to meet one condition TP =="538" | Weight <= 0.4. For this, we use a pipe (|):
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/4aa13e35-16c3-48cf-8a4c-0215135fd488)
+
+**We can conclude that the ampersand(&) operator behaves as an AND conditional while the pipe (|) operator behaves as an OR conditional.**
+
+
+### **Pandas  built-in conditional selectors**
+
+Pandas come with a few built-in conditional selectors, two of which we will highlight here. The first is isin. isin lets you select data whose value "is in" a list of values.
+
+
+**isin method**: 
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/def24936-ab29-48d3-893d-0fd3fac1e7fd)
+
++ We can request several objects that meet the given condition through the isin method!
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/add5a376-ac4f-4653-b18b-106d8d13e659)
+
++ We can also apply the loc selector together with the method isin:
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/d20951b8-79cd-4f41-9f2c-523e53e8645d)
+
+
++ It is also possible to filter the data given a condition:
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/2ba2c723-6380-463d-91ee-4cbd33fe5639)
+
+
+**isnull and notnull methods**
+
+The second Pandas built-in conditional selector is isnull (and its companion notnull). These methods let you highlight values that are (or are not) empty (NaN). 
+
+
+**isnull method**
+
+Return the null records from our DataFrame or from the given DataFrame selection.
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/d4ff87eb-6363-487f-8edf-3e5f2a64aec2)
+
+
+
+**notnull method**
+
+Returns the notnull records, that is to say, that do not have a null value from our DataFrame or from the given DataFrame selection.
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/f60ce9b1-8496-4f33-a717-a70a5204e252)
+
+
+**Null Register check in DF**
+
+We can check for the existence of null records in our DataFrame:
+![image](https://github.com/CLAREISMO/test/assets/63759427/ffc97f76-51cc-4dfa-9f04-9354e8a7ca0d)
+
+
+
+**Not-Null with Notna Register check in DF**
+Also, we can check for the existence of not-null records in our DataFrame with notna function:
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/63de664b-2064-44eb-9cdd-25109bedf98b)
+
+
+### **Assigning data**
+
+Going the other way, assigning data to a DataFrame is easy. You can assign either a constant value:
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/048fca6d-846f-446f-8603-f86c1cb53a79)
+
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/95d24d4c-d8e0-46a0-84f9-eb78d02142cc)
+
+
+#* Iterable data Assignment 
+
+We generate a new column index_backwards which returns an inverted index starting with the last value of the index of the original DataFrame and ending with the first record of the index of the original DataFrame.
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/84b778fc-4843-4c9c-a1c3-8a01fb567e50)
+
+When printing the DataFrame again we get an additional index_backwards column. Therefore the value of the columns increases to 17:
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/5143fa61-c669-43ee-a2f3-a2948ee065fa)
+
 
 
 
