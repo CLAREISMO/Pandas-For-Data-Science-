@@ -351,6 +351,11 @@ When printing the DataFrame again we get an additional index_backwards column. T
 ![image](https://github.com/CLAREISMO/test/assets/63759427/5143fa61-c669-43ee-a2f3-a2948ee065fa)
 
 
+## **3. CLASS: Summary Functions and Maps**
+
+### **Introduction**
+
+
 
 
 
