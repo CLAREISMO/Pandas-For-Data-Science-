@@ -80,3 +80,86 @@ print(dfEmer.N_HIJOS_MENORES_15ANOS.mean())
 dfEmer_N_HIJOS_MENORES_15ANOS_mean = dfEmer.N_HIJOS_MENORES_15ANOS.mean()
 dfEmer.N_HIJOS_MENORES_15ANOS.map(lambda p: p - dfEmer_N_HIJOS_MENORES_15ANOS_mean)
 print(dfEmer_N_HIJOS_MENORES_15ANOS_mean)
+
+
+#* deeper in to the map() method
+
+import pandas as pd
+import numpy as np
+
+dfEmer = pd.read_csv('population.csv', index_col = 0) 
+print(dfEmer)
+print(type(dfEmer))
+print(dfEmer.N_HIJOS_MENORES_15ANOS.mean())
+
+dfEmer_N_HIJOS_MENORES_15ANOS_mean = dfEmer.N_HIJOS_MENORES_15ANOS.mean()
+dfEmer.N_HIJOS_MENORES_15ANOS.map(lambda p: p - dfEmer_N_HIJOS_MENORES_15ANOS_mean)
+print(dfEmer_N_HIJOS_MENORES_15ANOS_mean)
+print(dfEmer.N_HIJOS_MENORES_15ANOS.map(lambda p: p - dfEmer_N_HIJOS_MENORES_15ANOS_mean))
+
+
+#*  apply() method
+
+import pandas as pd
+import numpy as np
+
+dfEmer = pd.read_csv('population.csv', index_col = 0) 
+
+dfEmer_N_HIJOS_MENORES_15ANOS_mean = dfEmer.N_HIJOS_MENORES_15ANOS.mean()
+dfEmer.N_HIJOS_MENORES_15ANOS.map(lambda p: p - dfEmer_N_HIJOS_MENORES_15ANOS_mean)
+print(dfEmer_N_HIJOS_MENORES_15ANOS_mean)
+print(dfEmer.N_HIJOS_MENORES_15ANOS.map(lambda p: p - dfEmer_N_HIJOS_MENORES_15ANOS_mean))
+
+
+def remean_N_HIJOS_MENORES_15ANOS(row):
+    row.N_HIJOS_MENORES_15ANOS = row.N_HIJOS_MENORES_15ANOS - dfEmer_N_HIJOS_MENORES_15ANOS_mean
+    return row
+
+print(dfEmer.apply(remean_N_HIJOS_MENORES_15ANOS, axis='columns'))
+
+
+#* Original DataFrame
+
+import pandas as pd
+import numpy as np
+
+dfEmer = pd.read_csv('population.csv', index_col = 0) 
+print(dfEmer)
+
+#* Common mapping operations as built-ins
+
+import pandas as pd
+import numpy as np
+
+dfEmer = pd.read_csv('population.csv', index_col = 0) 
+
+dfEmer_N_HIJOS_MENORES_15ANOS_mean = dfEmer.N_HIJOS_MENORES_15ANOS.mean()
+print(dfEmer.N_HIJOS_MENORES_15ANOS - dfEmer_N_HIJOS_MENORES_15ANOS_mean)
+
+#* Common mapping operations as built-ins
+
+import pandas as pd
+import numpy as np
+
+dfEmer = pd.read_csv('population.csv', index_col = 0) 
+
+dfEmer_N_HIJOS_MENORES_15ANOS_mean = dfEmer.N_HIJOS_MENORES_15ANOS.mean()
+print(dfEmer.N_HIJOS_MENORES_15ANOS - dfEmer_N_HIJOS_MENORES_15ANOS_mean)
+
+
+#* operators applied to the combination of information
+
+import pandas as pd
+import numpy as np
+
+dfMay = pd.read_csv('May_2022.csv', index_col = 0) 
+
+print(dfMay.TP + " - " + dfMay.Weight)
+print(dfMay.TP + " < " + dfMay.Weight)
+
+
+
+
+
+
+
