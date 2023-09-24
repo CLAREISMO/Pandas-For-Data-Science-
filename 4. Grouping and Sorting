@@ -1,0 +1,49 @@
+##! Grouping and Sorting
+
+############## groupby
+
+#* groupby() method
+
+# import pandas as pd
+
+# dfPop = pd.read_csv('population.csv', index_col = 0) 
+
+# group = dfPop.groupby('ESTRATO_VIVIENDA').ESTRATO_VIVIENDA.count()
+# print(group)
+
+##############
+
+# group1 = dfPop.groupby('NOMBRE_DEPTO').NOMBRE_DEPTO.count()
+# print(group1)
+
+# group3 = dfPop.groupby('ANOS_ESCOLARIDAD').ANOS_ESCOLARIDAD.count()
+# print(group3)
+
+# group4 = dfPop.groupby('HORAS_LABORALES_SEMANA').HORAS_LABORALES_SEMANA.count()
+# print(group4)
+
+
+#####################Groupby min() retorna el valor minimo
+
+
+#* Groupby min()
+
+# import pandas as pd
+# import numpy as np
+
+# dfPop = pd.read_csv('population.csv', index_col = 0) 
+# groupby_min = dfPop.groupby('ANOS_ESCOLARIDAD').ESTRATO_VIVIENDA.min()
+# print(groupby_min)
+
+#* ejemplo 2  Groupby min()
+
+#*Groupby min()
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0) 
+groupby_min = dfPop.groupby('ANOS_ESCOLARIDAD').INGRESOS_LABORALES.min()
+print(groupby_min)
+
+#####################
