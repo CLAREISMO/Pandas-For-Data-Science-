@@ -657,6 +657,89 @@ Finally, know that you can sort by more than one column at a time:
 ![image](https://github.com/CLAREISMO/test/assets/63759427/85a2584b-172b-4b30-9653-8524bebcf162)
 
 
+## **5. Data Types and Missing Values**
+
+
+### **Introduction**
+
+In this tutorial, you'll learn how to investigate data types within a DataFrame or Series. You'll also learn how to find and replace entries.
+
+
+###**Dtypes**
+The data type for a column in a DataFrame or a Series is known as the dtype.
+You can use the dtype property to grab the type of a specific column. 
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/1f3dd988-3db4-4a89-b26d-1fa95fb7872f)
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/89ab3e0a-2ddd-4f3e-8ff9-e6d7589da01e)
+
+
+Alternatively, the dtypes property returns the dtype of every column in the DataFrame:
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/a11bbfed-29ea-4a7a-83b3-146864b025de)
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/4a45519b-2bad-45c7-950f-ba4fe895608d)
+
+
++ Data types tell us something about how pandas is storing the data internally. float64 means that it's using a 64-bit floating point number; int64 means a similarly sized integer instead, and so on.
+
++ One peculiarity to keep in mind (and on display very clearly here) is that columns consisting entirely of strings do not get their own type; they are instead given the object type.
+
++ It's possible to convert a column of one type into another wherever such a conversion makes sense by using the astype() function. 
+
++ For example, we may transform the points column from its existing int64 data type into a float64 data type
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/d943a33b-08b1-4343-b9c4-be54b321e155)
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/e8c9da45-b2f4-4ee2-90ac-2a848971cfbd)
+
+
+Pandas also supports more exotic data types, such as categorical data and timeseries data.
+
+
+###**Missing data**
+Entries missing values are given the value NaN, short for "Not a Number". For technical reasons these NaN values are always of the float64 dtype.
+
+**ISNULL - NaN**
+Pandas provides some methods specific to missing data. To select NaN entries you can use pd.isnull() (or its companion pd.notnull()). This is meant to be used thusly:
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/ad353c28-19e4-4c3c-b2aa-a4771bd45910)
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/ab9c1ab7-7729-41c4-a105-050df39d89ba)
+
+
+###**Fillna() - Unknown**
+
++ Replacing missing values is a common operation. 
+
++ Pandas provides a really handy method for this problem: fillna(). fillna() provides a few different strategies for mitigating such data. 
+
++ For example, we can simply replace each NaN with an "Unknown"
+
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/6ab3ad3d-73a0-45e8-9d57-5415f53c15ae)
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/904539a5-207b-487e-a901-f125fdabf7d0)
+
+
+###**Replace() Method**
+
++ Or we could fill each missing value with the first non-null value that appears sometime after the given record in the database. This is known as the backfill strategy.
+
++ Alternatively, we may have a non-null value that we would like to:
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/d6146fe3-c9ea-4ee4-a2ab-277bbf5ed543)
+
+![image](https://github.com/CLAREISMO/test/assets/63759427/2ccabffc-0388-46bb-a617-5426488512e2)
+
+
+The replace() method is worth mentioning here because it's handy for replacing missing data which is given some kind of sentinel value in the dataset: things like "Unknown", "Undisclosed", "Invalid", and so on.
+
+
+
+
+
+
 
 
 
