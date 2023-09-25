@@ -146,6 +146,94 @@ print(reset_index)
 
 ##################
 
+#*Sorting
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+ESTRATO_VIVIENDA_dfPop = dfPop.groupby(['ANOS_ESCOLARIDAD', 'N_HIJOS']).ESTRATO_VIVIENDA.agg([len, max, min])
+print(ESTRATO_VIVIENDA_dfPop)
+
+reset_index1 = ESTRATO_VIVIENDA_dfPop.reset_index()
+reset_index2 = reset_index1.sort_values(by='len')
+print(reset_index2)
+
+################
+
+
+#* Sorted by max()
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+ESTRATO_VIVIENDA_dfPop = dfPop.groupby(['ANOS_ESCOLARIDAD', 'N_HIJOS']).ESTRATO_VIVIENDA.agg([len, max, min])
+print(ESTRATO_VIVIENDA_dfPop)
+
+reset_index1 = ESTRATO_VIVIENDA_dfPop.reset_index()
+reset_index2 = reset_index1.sort_values(by='max')
+print(reset_index2)
+
+#############
+
+#* SORT_VALUES()
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+ESTRATO_VIVIENDA_dfPop = dfPop.groupby(['ANOS_ESCOLARIDAD', 'N_HIJOS']).ESTRATO_VIVIENDA.agg([len, max, min])
+print(ESTRATO_VIVIENDA_dfPop)
+
+sort_values = ESTRATO_VIVIENDA_dfPop.sort_values(by='len', ascending=False)
+print(sort_values)
+
+
+###############
+
+
+#* sort.index()
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+ESTRATO_VIVIENDA_dfPop = dfPop.groupby(['ANOS_ESCOLARIDAD', 'N_HIJOS']).ESTRATO_VIVIENDA.agg([len, max, min])
+print(ESTRATO_VIVIENDA_dfPop)
+
+sort_index = ESTRATO_VIVIENDA_dfPop.sort_index()
+
+print(sort_index)
+
+
+###########
+
+#* Sort by more than one column at a time
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+ESTRATO_VIVIENDA_dfPop = dfPop.groupby(['ANOS_ESCOLARIDAD', 'N_HIJOS']).ESTRATO_VIVIENDA.agg([len, max, min])
+print(ESTRATO_VIVIENDA_dfPop)
+
+sort_values2 = ESTRATO_VIVIENDA_dfPop.sort_values(by=['ANOS_ESCOLARIDAD', 'len'])
+
+print(sort_values2)
+
+countries_reviewed.sort_values()
+
+
+
+
+
+
 
 
 
