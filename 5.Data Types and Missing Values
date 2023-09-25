@@ -1,0 +1,41 @@
+#* Dtypes
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+
+print(dfPop.INGRESOS_LABORALES.dtype)
+print(dfPop.ANOS_ESCOLARIDAD.dtype)
+print(dfPop.NOMBRE_DEPTO.dtype)
+
+##########
+
+
+#* Dtypes in all Dataframe
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+print(dfPop.dtypes)
+
+##############
+
+
+#* Change datatype
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+x = dfPop.N_HIJOS.astype('float64')
+print(x)
+
+#################
+
+
+
