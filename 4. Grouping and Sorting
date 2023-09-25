@@ -46,4 +46,108 @@ dfPop = pd.read_csv('population.csv', index_col = 0)
 groupby_min = dfPop.groupby('ANOS_ESCOLARIDAD').INGRESOS_LABORALES.min()
 print(groupby_min)
 
-#####################
+###########
+
+
+#*Groupby max()
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0) 
+groupby_max = dfPop.groupby('ANOS_ESCOLARIDAD').INGRESOS_LABORALES.max()
+print(groupby_max)
+
+##########
+
+
+#* Apply() method
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0) 
+apply1 = dfPop.groupby('ESTRATO_VIVIENDA').apply(lambda df: df.NOMBRE_DEPTO.iloc[0])
+print(apply1)
+
+dfPop = pd.read_csv('population.csv', index_col = 0) 
+apply2 = dfPop.groupby('NOMBRE_DEPTO').apply(lambda df: df.ESTRATO_VIVIENDA.iloc[0])
+print(apply2)
+
+#############
+
+#* More detailed control with apply
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+apply_detallado = dfPop.groupby(['ESTRATO_VIVIENDA', 'N_HIJOS' ]).apply(lambda df: df.loc[df.INGRESOS_LABORALES.idxmax()])
+print(apply_detallado)
+
+apply_detallado1 = dfPop.groupby(['ESTRATO_VIVIENDA', 'N_HIJOS' ]).apply(lambda df: df.loc[df.N_HIJOS_MENORES_15ANOS.idxmax()])
+print(apply_detallado1)
+
+#############
+
+#* agg() method
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+agg_Method = dfPop.groupby(['ESTRATO_VIVIENDA']).NOMBRE_DEPTO.agg([len, min, max])
+print(agg_Method)
+
+agg_Method2 = dfPop.groupby(['NOMBRE_DEPTO']).ESTRATO_VIVIENDA.agg([len, min, max])
+print(agg_Method2)
+
+##############
+
+
+#* Multy index
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+
+N_HIJOS_dfPop = dfPop.groupby(['ANOS_ESCOLARIDAD', 'ESTRATO_VIVIENDA']).N_HIJOS.agg([len, max, min])
+print(N_HIJOS_dfPop)
+
+mi = N_HIJOS_dfPop.index
+print(type(mi))
+
+
+ESTRATO_VIVINEDA_dfPop = dfPop.groupby(['ANOS_ESCOLARIDAD', 'N_HIJOS']).ESTRATO_VIVIENDA.agg([len, max, min])
+print(ESTRATO_VIVINEDA_dfPop)
+
+mi1 = ESTRATO_VIVINEDA_dfPop.index
+print(type(mi1))
+
+
+###############
+
+#* Reset_index() method
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+N_HIJOS_dfPop = dfPop.groupby(['ANOS_ESCOLARIDAD', 'ESTRATO_VIVIENDA']).N_HIJOS.agg([len, max, min])
+print(N_HIJOS_dfPop)
+
+reset_index = N_HIJOS_dfPop.reset_index()
+print(reset_index)
+
+##################
+
+
+
+
+
+
