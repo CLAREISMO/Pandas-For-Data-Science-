@@ -35,7 +35,30 @@ dfPop = pd.read_csv('population.csv', index_col = 0)
 x = dfPop.N_HIJOS.astype('float64')
 print(x)
 
-#################
+###############
+
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+isnull = dfPop[pd.isnull(dfPop.EDAD_ANOS)]
+print(dfPop.EDAD_ANOS)
+
+
+############
+
+
+#* replace() method
+
+import pandas as pd
+import numpy as np
+
+dfPop = pd.read_csv('population.csv', index_col = 0)
+
+unknown1 = dfPop.EDAD_ANOS.fillna("Unknown")
+print(unknown1)
 
 
 
